@@ -72,3 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 ./Assets/Packages
+/Packages/com.ptc.vuforia.engine-10.15.4.tgz
