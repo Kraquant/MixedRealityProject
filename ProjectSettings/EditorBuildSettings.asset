@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/VuforiaTest.unity
+    path: Assets/Scenes/ArScene.unity
     guid: c91df280366b36446a06cc9dd94a889b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 43b38178067758d48a120c0d54c349c1, type: 2}
