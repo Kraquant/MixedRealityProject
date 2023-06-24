@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BasicRaycast : MonoBehaviour
 {
-    Painter p;
+    private Camera cam;
     private bool held=false;
+    public Ray Raycast { get; private set; }
+    public RaycastHit RayHit { get; private set; }
+    public bool Held { get; private set; }
+
     // Start is called before the first frame update
     void Start()
     {
-        p=GetComponent<Painter>();
+        cam = GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -19,16 +24,13 @@ public class BasicRaycast : MonoBehaviour
             held=false;
             return;
         }
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 100))
-        {
-            p.ContinusDraw(hit.point,!held);
-            held=true;
-        }
-        else
-        {
-            held=false; // When we go outside the canvas, we don't want a line between the last point and the point where we entered again
-        }
+        Raycast = cam.ScreenPointToRay(Input.mousePosition);
+        Held = Physics.Raycast(Raycast, out RaycastHit rayHit, 100);
+        RayHit = rayHit;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(Raycast.origin, Raycast.origin + 100.0f*Raycast.direction);
     }
 }
