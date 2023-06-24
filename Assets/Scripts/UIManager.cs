@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     
     private Color currentColor;
     public ColorBoxUI colorBoxScript;
+    public GameObject frame;
 
     private void Start()
     {
@@ -33,6 +34,8 @@ public class UIManager : MonoBehaviour
         //currentColor = Color.white;
         currentColor = Color.HSVToRGB(hue, saturation, intensity);
 
+		//hide frame
+        frame.SetActive(false);
 
         // Attach event handlers to the slider events
         thicknessSlider.onValueChanged.AddListener(OnThicknessSliderChanged);
