@@ -17,7 +17,7 @@ public class SaveColor : MonoBehaviour, IPointerClickHandler
         {
             // Save the color of the top box to this box
             colorImage.color = topColorBoxImage.color;
-            isTopBoxSelected = false;
+            topColorBox.SetIsBoxSelected(false);
         }
         else
         {
