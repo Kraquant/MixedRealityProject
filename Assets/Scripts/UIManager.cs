@@ -31,6 +31,7 @@ public class UIManager : MonoBehaviour
         
         // Set up the initial color
         //currentColor = Color.white;
+        currentColor = Color.HSVToRGB(hue, saturation, intensity);
 
 
         // Attach event handlers to the slider events

@@ -16,13 +16,11 @@ public class IntensitySlider : MonoBehaviour
   		fillAreaImage = intensitySlider.fillRect.GetComponent<Image>();
     }
 
-    // Update is called once per frame
     private void Update()
     {
         // Retrieve the hue value from the HueSlider script
     	hue = hueSlider.value;
 
-    	
     	// Calculate the gradient texture based on the hue
     	Texture2D intensityGradient = GenerateIntensityGradient(hue);
 
@@ -56,3 +54,8 @@ public class IntensitySlider : MonoBehaviour
     	return gradientTexture;
 	}
 }
+
+
+
+
+
