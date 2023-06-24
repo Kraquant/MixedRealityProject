@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.InputSystem.HID;
 
 public class Painter : MonoBehaviour
 {
@@ -14,7 +11,6 @@ public class Painter : MonoBehaviour
     private bool updated=false;
     private Vector2Int oldPos;
     private Color defaultColor;
-    private BasicRaycast rayCaster;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +20,6 @@ public class Painter : MonoBehaviour
         defaultColor = texture.GetPixel(0,0);
         Debug.Log(defaultColor);
         GetComponent<Renderer>().material.mainTexture = texture;
-        rayCaster = FindObjectOfType<BasicRaycast>();
     }
 
     // Convert a world-space coordinate to texture coordinate
@@ -149,16 +144,9 @@ public class Painter : MonoBehaviour
 
 
     void Update() {
-        if (rayCaster.Held && rayCaster.RayHit.collider.gameObject == this.gameObject)
-        {
-            ContinusDraw(rayCaster.RayHit.point, false);
-        }
-
         if (updated){
             texture.Apply();
             updated=false;
         }
     }
-
-
 }
