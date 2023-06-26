@@ -13,7 +13,7 @@ public class IntensitySlider : MonoBehaviour
     private void Awake()
     {
   		intensitySlider = GetComponent<Slider>();
-  		fillAreaImage = intensitySlider.fillRect.GetComponent<Image>();
+  		//fillAreaImage = intensitySlider.fillRect.GetComponentFromChildren<Image>();
     }
 
     private void Update()
@@ -43,7 +43,7 @@ public class IntensitySlider : MonoBehaviour
         	float intensity = (float)x / (float)(width - 1); // Calculate the intensity based on the x position
 
         	// Convert the hue and intensity to RGB color
-        	Color color = Color.HSVToRGB(hue / 360, 1f, intensity);
+        	Color color = Color.HSVToRGB(hue, 1f, intensity);
 
         	colors[x] = color;
     	}

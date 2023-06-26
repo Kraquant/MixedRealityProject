@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class SaveColor : MonoBehaviour, IPointerClickHandler
 {
     public Image colorImage; // Reference to the color image of the box
+    public UIManager uiManager;
 
     private bool isTopBoxSelected = false;
     [SerializeField] private ColorBoxUI topColorBox;
@@ -24,7 +25,8 @@ public class SaveColor : MonoBehaviour, IPointerClickHandler
             // Set this box as the top box and store its color
             isTopBoxSelected = true; //this may not make sense. remove.
             //topBoxColor = colorImage.color;
-            topColorBoxImage.color = colorImage.color;
+            topColorBox.UpdateColor(colorImage.color);
+            uiManager.UpdateSlidersFromColor(colorImage.color);
         }
     }
 }

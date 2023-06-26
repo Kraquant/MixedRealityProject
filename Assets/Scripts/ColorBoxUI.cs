@@ -10,6 +10,7 @@ public class ColorBoxUI : MonoBehaviour, IPointerClickHandler
     [SerializeField] private Image colorBoxImage;
     public GameObject frame;
     private bool isBoxSelected = false;
+    public UIManager uiManager;
 
     public void UpdateColor(Color color)
     {
@@ -32,4 +33,5 @@ public class ColorBoxUI : MonoBehaviour, IPointerClickHandler
     	isBoxSelected = value;
         frame.SetActive(isBoxSelected);
     }
+
 }

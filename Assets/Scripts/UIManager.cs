@@ -24,11 +24,17 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         // Set up the initial values of the sliders
-        thicknessSlider.value = 20f;
+        thicknessSlider.value = 70f;
         hueSlider.value = 0f;
         saturationSlider.value = 1f;
         intensitySlider.value = 1f;
         transparencySlider.value = 1f;
+        
+        thickness = thicknessSlider.value;
+        hue = hueSlider.value;
+        saturation = saturationSlider.value;
+        intensity = intensitySlider.value;
+        transparency = transparencySlider.value;
         
         // Set up the initial color
         //currentColor = Color.white;
@@ -53,9 +59,9 @@ public class UIManager : MonoBehaviour
     
     private void OnHueSliderChanged(float value)
     {
-        hue = value / 360f;
+        hue = value;
         // Update the hue component of the color
-        currentColor = Color.HSVToRGB(value / 360f, saturation, intensity);
+        currentColor = Color.HSVToRGB(value, saturation, intensity);
         colorBoxScript.UpdateColor(currentColor);
         
     }
@@ -85,4 +91,18 @@ public class UIManager : MonoBehaviour
         currentColor.a = value;
         colorBoxScript.UpdateColor(currentColor);
     }
+    
+    public void UpdateSlidersFromColor(Color color)
+	{
+    	// Convert RGB color to HSI
+    	Color.RGBToHSV(color, out hue, out saturation, out intensity);
+    
+    	// Set the HSI slider values
+    	hueSlider.value = hue;
+    	saturationSlider.value = saturation;
+    	intensitySlider.value = intensity;
+    	
+    	// Set the alpha slider value
+    	transparencySlider.value = color.a;
+	}
 }

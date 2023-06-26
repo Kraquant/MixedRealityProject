@@ -13,7 +13,7 @@ public class SaturationSlider : MonoBehaviour
     private void Awake()
 	{
   		saturationSlider = GetComponent<Slider>();
-  		fillAreaImage = saturationSlider.fillRect.GetComponent<Image>();
+  		//fillAreaImage = saturationSlider.fillRect.GetComponentFromChildren<Image>();
 	}
 	
 	private void Update()
@@ -43,7 +43,7 @@ public class SaturationSlider : MonoBehaviour
         	float saturation = (float)x / (float)(width - 1); // Calculate the saturation based on the x position
 
         	// Convert the hue and saturation to RGB color
-        	Color color = Color.HSVToRGB(hue / 360, saturation, 1f);
+        	Color color = Color.HSVToRGB(hue, saturation, 1f);
 
         	colors[x] = color;
     	}

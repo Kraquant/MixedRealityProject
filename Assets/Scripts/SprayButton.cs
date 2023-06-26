@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 public class SprayButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public Image sprayEffect;
+    public PaintModeToggle paintModeToggle;
 
     private void Start()
     {
@@ -15,7 +16,8 @@ public class SprayButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         // Show the image when the button is pressed
-        sprayEffect.gameObject.SetActive(true);
+        // only if spray mode, not in finger mode.
+        if (paintModeToggle.GetSprayMode()) sprayEffect.gameObject.SetActive(true);
     }
 
     public void OnPointerUp(PointerEventData eventData)
