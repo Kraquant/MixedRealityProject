@@ -19,8 +19,8 @@ public class PaintModeToggle : MonoBehaviour
     
     private void Start()
     {
-        touchRaycast = GetComponent<BasicRaycast>();
-        sprayRaycast = GetComponent<ButtonRaycast>();
+        touchRaycast = sprayCan.GetComponent<BasicRaycast>();
+        sprayRaycast = sprayCan.GetComponent<ButtonRaycast>();
         touchRaycast.modeEnabled = false;
         sprayRaycast.modeEnabled = true;
     	sprayMode = true;
