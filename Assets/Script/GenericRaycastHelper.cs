@@ -29,7 +29,7 @@ public class GenericRaycastHelper
                 forceReset = true;
                 previous = p;
             }
-            p.ContinusDraw(closest.point,forceReset || reset);
+            p.ContinusDraw(closest,forceReset || reset);
             forceReset=false;
         }
         else

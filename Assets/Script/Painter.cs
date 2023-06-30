@@ -32,6 +32,9 @@ public class Painter : MonoBehaviour
         );
     }
 
+    // Convert a UV coordinate to a texture coordinate
+    private Vector2Int ConvertFromUV(Vector2 p) => new Vector2Int((int)(p.x * texture_size), (int)(p.y * texture_size));
+
     public void ContinusDraw(Vector3 p, bool reset = false) {
         if (reset) {
             oldPos = ConvertCoords(p);
@@ -39,6 +42,20 @@ public class Painter : MonoBehaviour
             return;
         }
         Vector2Int newPos=ConvertCoords(p);
+        DrawLine(oldPos,newPos);
+        //DrawCircle(newPos);
+        oldPos=newPos;
+    }
+
+    // TextureCoord version
+    public void ContinusDraw(RaycastHit hit, bool reset = false) {
+        if (reset) {
+            oldPos = ConvertFromUV(hit.textureCoord);
+            Debug.Log(oldPos);
+            DrawCircle(oldPos);
+            return;
+        }
+        Vector2Int newPos=ConvertFromUV(hit.textureCoord);
         DrawLine(oldPos,newPos);
         //DrawCircle(newPos);
         oldPos=newPos;
@@ -116,32 +133,6 @@ public class Painter : MonoBehaviour
             }
         }
     }
-    
-    /*public void DrawLine(Vector2Int p1, Vector2Int p2) {
-        int dx = System.Math.Abs(p2.x - p1.x);
-        int sx = p1.x < p2.x ? 1 : -1;
-        int dy = -System.Math.Abs(p2.y - p1.y);
-        int sy = p1.y < p2.y ? 1 : -1;
-        int error = dx + dy;
-        
-        while (true){
-            Draw(p1);
-            if (p1.x == p2.x && p1.y == p2.y) break;
-            int e2 = 2 * error;
-            if (e2 >= dy){
-                if (p1.x == p2.x) break;
-                error = error + dy;
-                p1.x = p1.x + sx;
-            }
-            if (e2 <= dx) {
-                if (p1.y == p2.y) break;
-                error = error + dx;
-                p1.y = p1.y + sy;
-            }
-        }
-    }*/
-
-
 
     void Update() {
         if (updated){
