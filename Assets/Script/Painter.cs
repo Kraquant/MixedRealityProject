@@ -16,11 +16,30 @@ public class Painter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        Renderer rdr = GetComponent<Renderer>();
         texture = new Texture2D(texture_size, texture_size);
         texture.wrapMode = TextureWrapMode.Clamp;
         defaultColor = texture.GetPixel(0,0);
-        Debug.Log(defaultColor);
-        GetComponent<Renderer>().material.mainTexture = texture;
+        bool useTransparent = false;
+        foreach (Material mat in rdr.materials) {
+            if (mat.shader.name != "Shader Graphs/Drawable") {
+                // Legacy behaviour: works with basic planes without custom shader
+                mat.mainTexture = texture;
+            } else {
+                // We use the new shader system
+                mat.SetTexture("_DrawTexture", texture);
+                useTransparent = true;
+            }
+        }
+        if (useTransparent) {
+            defaultColor = Color.clear;
+            // We reset the whole texture to this color
+            for (int x = 0; x < texture_size; x++)
+                for (int y = 0; y < texture_size; y++)
+                    texture.SetPixel(x,y,Color.clear);
+            texture.Apply();
+        }
     }
 
     // Convert a world-space coordinate to texture coordinate
