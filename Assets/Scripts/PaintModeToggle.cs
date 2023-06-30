@@ -10,6 +10,7 @@ public class PaintModeToggle : MonoBehaviour
     
     public Image selfImage;
     public Image paintButtonImage;
+    public GameObject pointerImage; //GameObject to access SetActive
 
     public Sprite sprayCanSprite;
     public Sprite fingerSprite;
@@ -33,11 +34,16 @@ public class PaintModeToggle : MonoBehaviour
 
     public void Toggle()
     {
+    	//visuals
     	sprayMode = !sprayMode;
     	selfImage.sprite = sprayMode ? fingerSprite : sprayCanSprite;
     	paintButtonImage.sprite = sprayMode ? sprayCanSprite : fingerSprite;
+    	pointerImage.SetActive(sprayMode); //pointer only visible in spray mode.
+    	
+    	//raycasting
         touchRaycast.modeEnabled = !sprayMode;
         sprayRaycast.modeEnabled = sprayMode;
+        
         //sprayCan.SetActive(!sprayCan.activeSelf);
         //sprayMode = sprayCan.activeSelf;
     }
