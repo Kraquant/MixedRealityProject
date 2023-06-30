@@ -19,11 +19,13 @@ public class ButtonRaycast : MonoBehaviour,IUpdateSelectedHandler,IPointerDownHa
 {
     private bool isPressed = false;
     private bool previousPressed = false;
+    public bool modeEnabled=true;
 
     public Transform origin;
     
     public void OnUpdateSelected(BaseEventData data)
     {
+        if (!modeEnabled) return;
         if (isPressed)
         {
             GenericRaycastHelper.ProcessHits(Physics.RaycastAll(new Ray(origin.position, origin.TransformDirection(Vector3.forward)), GenericRaycastHelper.MAX_DISTANCE), !previousPressed);
