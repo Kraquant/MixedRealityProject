@@ -13,9 +13,16 @@ public class PaintModeToggle : MonoBehaviour
 
     public Sprite sprayCanSprite;
     public Sprite fingerSprite;
+
+    private BasicRaycast touchRaycast;
+    private ButtonRaycast sprayRaycast;
     
     private void Start()
     {
+        touchRaycast = GetComponent<BasicRaycast>();
+        sprayRaycast = GetComponent<ButtonRaycast>();
+        touchRaycast.modeEnabled = false;
+        sprayRaycast.modeEnabled = true;
     	sprayMode = true;
     }
     
@@ -29,7 +36,8 @@ public class PaintModeToggle : MonoBehaviour
     	sprayMode = !sprayMode;
     	selfImage.sprite = sprayMode ? fingerSprite : sprayCanSprite;
     	paintButtonImage.sprite = sprayMode ? sprayCanSprite : fingerSprite;
-        
+        touchRaycast.modeEnabled = !sprayMode;
+        sprayRaycast.modeEnabled = sprayMode;
         //sprayCan.SetActive(!sprayCan.activeSelf);
         //sprayMode = sprayCan.activeSelf;
     }

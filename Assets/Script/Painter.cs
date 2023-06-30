@@ -6,8 +6,9 @@ public class Painter : MonoBehaviour
 {
     Texture2D texture;
     readonly int texture_size = 1024;
-    public Color drawing_color;
-    public int radius = 10;
+    public static Color drawing_color = Color.black;
+    public static int radius = 10;
+    public static bool eraser = false;
     private bool updated=false;
     private Vector2Int oldPos;
     private Color defaultColor;
@@ -56,8 +57,7 @@ public class Painter : MonoBehaviour
         // Before that, we do a slight optimisation: if the new color is fully opaque, we don't bother with alpha blending
         if (drawing_color.a>0.9999999)
             texture.SetPixel(x, y, drawing_color);
-        else if (drawing_color.a<=0.0001)
-            // If the color is full tranparent, we consider it is an eraser and we don't blend
+        else if (eraser)
             texture.SetPixel(x, y, defaultColor);
         else {
             // Alpha blending

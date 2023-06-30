@@ -6,21 +6,20 @@ using UnityEngine.UI;
 public class EraserButton : MonoBehaviour
 {
 	public GameObject eraserFrame;
-	private bool eraserMode;
 	
 	private void Start()
 	{
-		eraserMode = false;
+		Painter.eraser = false;
 	}
 	
     public void Toggle()
     {
         eraserFrame.SetActive(!eraserFrame.activeSelf);
-        eraserMode = eraserFrame.activeSelf;
+        Painter.eraser = eraserFrame.activeSelf;
     }
     
     public bool IsEraserMode()
     {
-    	return eraserMode;    
+    	return Painter.eraser;    
     }
 }

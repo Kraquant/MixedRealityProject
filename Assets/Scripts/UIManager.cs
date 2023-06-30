@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         // Set up the initial values of the sliders
-        thicknessSlider.value = 70f;
+        thicknessSlider.value = 10f;
         hueSlider.value = 0f;
         saturationSlider.value = 1f;
         intensitySlider.value = 1f;
@@ -54,6 +54,7 @@ public class UIManager : MonoBehaviour
     private void OnThicknessSliderChanged(float value)
     {
         thickness = value;
+        Painter.radius = (int)value;
         // Update the color or perform any other necessary actions
     }
     
@@ -63,6 +64,7 @@ public class UIManager : MonoBehaviour
         // Update the hue component of the color
         currentColor = Color.HSVToRGB(value, saturation, intensity);
         colorBoxScript.UpdateColor(currentColor);
+        Painter.drawing_color = currentColor;
         
     }
 
@@ -72,6 +74,7 @@ public class UIManager : MonoBehaviour
         // Update the saturation component of the color
         currentColor = Color.HSVToRGB(hue, value, intensity);
         colorBoxScript.UpdateColor(currentColor);
+        Painter.drawing_color = currentColor;
         
     }
 
@@ -81,7 +84,7 @@ public class UIManager : MonoBehaviour
         // Update the intensity component of the color
         currentColor = Color.HSVToRGB(hue, saturation, value);
         colorBoxScript.UpdateColor(currentColor);
-        
+        Painter.drawing_color = currentColor;
     }
     
     private void OnTransparencySliderChanged(float value)
@@ -90,6 +93,7 @@ public class UIManager : MonoBehaviour
         // Update the transparency component of the color
         currentColor.a = value;
         colorBoxScript.UpdateColor(currentColor);
+        Painter.drawing_color = currentColor;
     }
     
     public void UpdateSlidersFromColor(Color color)
