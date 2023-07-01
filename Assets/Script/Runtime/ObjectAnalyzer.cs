@@ -12,7 +12,9 @@ public class ObjectAnalyzer : MonoBehaviour
     {
         foreach (MeshFilter meshFilter in GetComponentsInChildren<MeshFilter>())
         {
-            ObjectMeshInfo meshInfo = meshFilter.gameObject.AddComponent<ObjectMeshInfo>();
+            ObjectMeshInfo meshInfo = meshFilter.gameObject.GetComponent<ObjectMeshInfo>();
+            if (meshFilter.GetComponent<ObjectMeshInfo>() == null)
+                meshInfo = meshFilter.gameObject.AddComponent<ObjectMeshInfo>();
             meshInfo.Setup();
         }
     }

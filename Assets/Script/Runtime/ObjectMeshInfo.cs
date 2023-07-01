@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class ObjectMeshInfo : MonoBehaviour
 {
     [SerializeField] Mesh _mesh;
     [SerializeField] Gradient _vizualisationGradient;
+    [SerializeField] bool _drawGizmos = true;
 
     //Variables for serialization
     [SerializeField] List<Triangle[]> _islandsSerialized;
@@ -74,6 +76,14 @@ public class ObjectMeshInfo : MonoBehaviour
     {
         _islands = ConvertForRuntime(_islandsSerialized);
         _edges = ConvertForRuntime(_edgesSerialized);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (_drawGizmos)
+        {
+            DrawGizmosIslands();
+        }
     }
 
     #region Gizmos
