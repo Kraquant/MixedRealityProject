@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7404946303221652777}
   - component: {fileID: 1038865461166733202}
   - component: {fileID: 3082329228343505407}
+  - component: {fileID: 3975567052258041884}
   m_Layer: 0
   m_Name: berries001.004
   m_TagString: Untagged
@@ -96,6 +97,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf2aa16cf5ff0d368422e1cdc42e546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &3975567052258041884
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347925780431860964}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8139932946418273394, guid: f09e9235217f1e14ba449c25cfe19812, type: 3}
 --- !u!1 &1193319387517653200
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +177,7 @@ GameObject:
   - component: {fileID: 4989053533350505665}
   - component: {fileID: 3269864593917906147}
   - component: {fileID: 6280594484832877962}
+  - component: {fileID: 966200967494338252}
   m_Layer: 0
   m_Name: berries001.003
   m_TagString: Untagged
@@ -246,6 +262,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf2aa16cf5ff0d368422e1cdc42e546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &966200967494338252
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743504277315090353}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1736420149836390567, guid: f09e9235217f1e14ba449c25cfe19812, type: 3}
 --- !u!1 &1894533642957448134
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,6 +288,7 @@ GameObject:
   - component: {fileID: 3024763650153648797}
   - component: {fileID: 8953580546550575981}
   - component: {fileID: 7481742775306927360}
+  - component: {fileID: 7021111665001737230}
   m_Layer: 0
   m_Name: berries001.002
   m_TagString: Untagged
@@ -342,6 +373,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf2aa16cf5ff0d368422e1cdc42e546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &7021111665001737230
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894533642957448134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6241327741499029045, guid: f09e9235217f1e14ba449c25cfe19812, type: 3}
 --- !u!1 &4405962215911066654
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +399,7 @@ GameObject:
   - component: {fileID: 5230730759753948116}
   - component: {fileID: 8494267600727402101}
   - component: {fileID: 4518213498715043083}
+  - component: {fileID: 1260340735706699374}
   m_Layer: 0
   m_Name: strawberry001
   m_TagString: Untagged
@@ -438,6 +484,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf2aa16cf5ff0d368422e1cdc42e546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &1260340735706699374
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4405962215911066654}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4515505957134711649, guid: f09e9235217f1e14ba449c25cfe19812, type: 3}
 --- !u!1 &5071966979231341780
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +510,7 @@ GameObject:
   - component: {fileID: 1137922082847453179}
   - component: {fileID: 3735367542549102974}
   - component: {fileID: 3612039197421415729}
+  - component: {fileID: 4793858241991011}
   m_Layer: 0
   m_Name: cake001
   m_TagString: Untagged
@@ -534,6 +595,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf2aa16cf5ff0d368422e1cdc42e546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &4793858241991011
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5071966979231341780}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7679534377584443882, guid: f09e9235217f1e14ba449c25cfe19812, type: 3}
 --- !u!1 &5451622947288455084
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +621,7 @@ GameObject:
   - component: {fileID: 1668621023237568573}
   - component: {fileID: 2737801626839209722}
   - component: {fileID: 5749183948305372531}
+  - component: {fileID: 7264354402104199851}
   m_Layer: 0
   m_Name: frosting001
   m_TagString: Untagged
@@ -630,6 +706,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf2aa16cf5ff0d368422e1cdc42e546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &7264354402104199851
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5451622947288455084}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -362457273799373130, guid: f09e9235217f1e14ba449c25cfe19812, type: 3}
 --- !u!1 &6374054390910128347
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +732,7 @@ GameObject:
   - component: {fileID: 7951097413578675673}
   - component: {fileID: 6463192818078893319}
   - component: {fileID: 2151724469065268782}
+  - component: {fileID: 2544972251043563207}
   m_Layer: 0
   m_Name: leaves003
   m_TagString: Untagged
@@ -726,6 +817,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf2aa16cf5ff0d368422e1cdc42e546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &2544972251043563207
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6374054390910128347}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7289192810928659436, guid: f09e9235217f1e14ba449c25cfe19812, type: 3}
 --- !u!1 &7036675040882536926
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,6 +843,7 @@ GameObject:
   - component: {fileID: 8562063308970229299}
   - component: {fileID: 632869211933473588}
   - component: {fileID: 2123905068335164730}
+  - component: {fileID: 3747892331957410434}
   m_Layer: 0
   m_Name: berries001.001
   m_TagString: Untagged
@@ -822,6 +928,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf2aa16cf5ff0d368422e1cdc42e546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &3747892331957410434
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7036675040882536926}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7660764305510531814, guid: f09e9235217f1e14ba449c25cfe19812, type: 3}
 --- !u!1 &7719982077846578179
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,6 +954,7 @@ GameObject:
   - component: {fileID: 412415799729955844}
   - component: {fileID: 7732656499290029992}
   - component: {fileID: 2291024690227048790}
+  - component: {fileID: 3406571619168364423}
   m_Layer: 0
   m_Name: leaves004
   m_TagString: Untagged
@@ -918,6 +1039,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf2aa16cf5ff0d368422e1cdc42e546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &3406571619168364423
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719982077846578179}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2892471426503117832, guid: f09e9235217f1e14ba449c25cfe19812, type: 3}
 --- !u!1 &8684808779733890627
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,6 +1065,7 @@ GameObject:
   - component: {fileID: 4840850121645436440}
   - component: {fileID: 497686952937689927}
   - component: {fileID: 3331400345361922902}
+  - component: {fileID: 7107773185998916979}
   m_Layer: 0
   m_Name: blueberry001
   m_TagString: Untagged
@@ -1014,3 +1150,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf2aa16cf5ff0d368422e1cdc42e546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &7107773185998916979
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8684808779733890627}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6555294799358314750, guid: f09e9235217f1e14ba449c25cfe19812, type: 3}
