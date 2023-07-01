@@ -12,8 +12,8 @@ public class ObjectMeshInfo : MonoBehaviour
     [SerializeField] bool _drawGizmos = true;
 
     //Variables for serialization
-    [SerializeField] List<Triangle[]> _islandsSerialized;
-    [SerializeField] List<Triangle[]> _edgesSerialized;
+    [SerializeField] List<ListWrapper<Triangle>> _islandsSerialized;
+    [SerializeField] List<ListWrapper<Triangle>> _edgesSerialized;
 
     //Variables for runtime
     private HashSet<Triangle>[] _islands;
@@ -53,6 +53,8 @@ public class ObjectMeshInfo : MonoBehaviour
         _islandsSerialized = ConvertForSerialization(GetIslands(_mesh.triangles));
         _edgesSerialized = ConvertForSerialization(GetIslandsEdges());
         SetupGradient();
+
+        EditorUtility.SetDirty(this);
     }
 
     public int GetIslandIndex(Triangle triangle)
@@ -221,20 +223,24 @@ public class ObjectMeshInfo : MonoBehaviour
         _vizualisationGradient.SetKeys(colors, alphas);
     } 
     
-    private List<Triangle[]> ConvertForSerialization(HashSet<Triangle>[] hashArray)
+    private List<ListWrapper<Triangle>> ConvertForSerialization(HashSet<Triangle>[] hashArray)
     {
-        List<Triangle[]> res = new List<Triangle[]>();
-        foreach (HashSet<Triangle> hash in hashArray) res.Add(hash.ToArray());
+        List<ListWrapper<Triangle>> res = new List<ListWrapper<Triangle>>();
+        foreach (HashSet<Triangle> hash in hashArray)
+        {
+            res.Add(new ListWrapper<Triangle>());
+            res.Last().list = hash.ToList();
+        }
         return res;
     }
 
-    private HashSet<Triangle>[] ConvertForRuntime(List<Triangle[]> arrayArray)
+    private HashSet<Triangle>[] ConvertForRuntime(List<ListWrapper<Triangle>> arrayArray)
     {
         List<HashSet<Triangle>> hashList = new List<HashSet<Triangle>>();
-        foreach (Triangle[] islandArray in _islandsSerialized)
+        foreach (ListWrapper<Triangle> islandArray in _islandsSerialized)
         {
             hashList.Add(new HashSet<Triangle>());
-            hashList.Last().AddRange(islandArray);
+            hashList.Last().AddRange(islandArray.list);
         }
         return hashList.ToArray();
     }
