@@ -12,11 +12,13 @@ public class Painter : MonoBehaviour
     private bool updated=false;
     private Vector2Int oldPos;
     private Color defaultColor;
+    private int previousIsland=0;
+    private ObjectMeshInfo omi;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        omi = GetComponent<ObjectMeshInfo>();
         Renderer rdr = GetComponent<Renderer>();
         texture = new Texture2D(texture_size, texture_size);
         texture.wrapMode = TextureWrapMode.Clamp;
@@ -68,9 +70,11 @@ public class Painter : MonoBehaviour
 
     // TextureCoord version
     public void ContinusDraw(RaycastHit hit, bool reset = false) {
+        int island = omi ? omi.GetIslandIndex(hit.triangleIndex) : 0;
+        if (island != previousIsland)
+            reset = true;
         if (reset) {
             oldPos = ConvertFromUV(hit.textureCoord);
-            Debug.Log(oldPos);
             DrawCircle(oldPos);
             return;
         }
@@ -78,6 +82,7 @@ public class Painter : MonoBehaviour
         DrawLine(oldPos,newPos);
         //DrawCircle(newPos);
         oldPos=newPos;
+        previousIsland=island;
     }
 
     // Draws from a 3D world-space point
