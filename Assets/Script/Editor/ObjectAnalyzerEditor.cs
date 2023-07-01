@@ -12,13 +12,10 @@ public class ObjectAnalyzerEditor : Editor
         ObjectAnalyzer script = (ObjectAnalyzer)target;
 
         base.OnInspectorGUI();
-        if (GUILayout.Button("Get Meshes"))
+        if (GUILayout.Button("Setup Object and Children"))
         {
-            Debug.Log("Getting meshes" + target.name);
-            script.GetMeshes();
-        }
-        if (GUILayout.Button("Test"))
-        {
+            Debug.Log("Setting up meshes" + target.name);
+            script.SetupObjectAndChildren();
         }
     }
 
