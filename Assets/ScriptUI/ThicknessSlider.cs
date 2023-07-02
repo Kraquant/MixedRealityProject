@@ -8,7 +8,7 @@ public class ThicknessSlider : MonoBehaviour
 	public Slider thicknessSlider;
 	private int thickness;
 	public Image paintImage;
-	private float scale = 200f;
+	private float scale = 100f;
 	
     private void Start()
     {

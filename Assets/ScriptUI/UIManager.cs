@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         // Set up the initial values of the sliders
-        thicknessSlider.value = 10f;
+        thicknessSlider.value = 20f;
         hueSlider.value = 0f;
         saturationSlider.value = 1f;
         intensitySlider.value = 1f;
