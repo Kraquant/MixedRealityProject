@@ -1,8 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 
 public class ObjectMeshInfo : MonoBehaviour
@@ -53,8 +51,6 @@ public class ObjectMeshInfo : MonoBehaviour
         _islandsSerialized = ConvertForSerialization(GetIslands(_mesh.triangles));
         _edgesSerialized = ConvertForSerialization(GetIslandsEdges());
         SetupGradient();
-
-        EditorUtility.SetDirty(this);
     }
 
     public int GetIslandIndex(Triangle triangle)
